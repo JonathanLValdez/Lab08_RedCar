@@ -51,4 +51,27 @@ Add keyPressed() to change the effect and print the name of the kernel you are a
     })
   };
 }
+
+  // Set initial kernel
+  Kernel k = kernels[currentKernel];
+  k.apply(car, output);
+
+  image(car, 0, 0);
+  image(output, car.width, 0);
+}
+
+void draw() {
+  // Add any animation or continuous updates here
+}
+
+void keyPressed() {
+  // Change the effect and print the name of the kernel being applied
+  if (key >= '1' && key <= '8') {
+    currentKernel = key - '1';
+    Kernel k = kernels[currentKernel];
+    k.apply(car, output);
+    println("Applying kernel: " + names[currentKernel]);
+    image(output, car.width, 0);
+  }
+}
 ```
