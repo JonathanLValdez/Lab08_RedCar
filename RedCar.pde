@@ -1,3 +1,4 @@
+
 void setup(){
   size(1450,500);
   PImage car = loadImage("redcar.png");
